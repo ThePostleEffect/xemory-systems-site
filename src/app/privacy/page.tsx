@@ -76,7 +76,13 @@ const sections: LegalSection[] = [
         <p>
           Submitting a contact message does not subscribe you to a marketing
           list. This website has no newsletter signup, advertising pixels or
-          visitor-analytics scripts. If you separately choose to receive
+          visitor-analytics scripts. We use private server-log reports to
+          estimate daily visitors, page requests and referring sites. Known
+          bots, assets, API calls and identifiable page-prefetch requests are
+          excluded. Visitor estimates use an IP address and browser information
+          for each day; they do not identify verified individuals. The report
+          shows aggregate counts and referring domains, not individual IP
+          addresses or full referring URLs. If you separately choose to receive
           marketing through the store, use the unsubscribe option in those
           messages or contact us.
         </p>
@@ -165,6 +171,15 @@ const sections: LegalSection[] = [
           record is needed for accounting or tax purposes, and whether a legal
           preservation requirement applies. Provider logs, backups and records
           may have separate retention periods.
+        </p>
+        <p>
+          Our dedicated traffic log records IP addresses, browser information,
+          public page paths, access times and referring domains without URL
+          query strings. It rotates daily with up to 14 archived logs; the
+          current log is also retained. Private traffic reports cover a rolling
+          14-day period. Ordinary hosting and security logs are separate and may
+          retain additional request details. No separate analytics company
+          receives this traffic data.
         </p>
         <p>
           Contact us about deletion of information we control. Some records may
