@@ -1,69 +1,44 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
-
+import { SiteFrame } from "@/components/site-frame";
 import "./globals.css";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.xemorysystems.com"),
   title: {
-    default: "Xemory Systems",
+    default: "Xemory Systems — Imagine. Create. Make it real.",
     template: "%s | Xemory Systems",
   },
   description:
-    "Xemory Systems is a Bellingham, Washington company focused on thoughtful digital systems, AI-related implementation, automation, and custom technical work.",
-  applicationName: "Xemory Systems",
-  keywords: [
-    "Xemory Systems",
-    "Bellingham Washington",
-    "digital systems",
-    "automation",
-    "AI implementation",
-    "custom technical projects",
-  ],
+    "Useful creations. Unusual ideas. Xemory Systems is an experimental technology and product company in Bellingham, Washington.",
   openGraph: {
-    title: "Xemory Systems",
-    description:
-      "Thoughtful digital systems, automation, AI-related implementation, and custom technical work.",
     type: "website",
+    siteName: "Xemory Systems",
+    title: "Xemory Systems — Imagine. Create. Make it real.",
+    description:
+      "Useful creations. Unusual ideas. Explore what we are building.",
+    images: [
+      {
+        url: "/brand/xemory-canonical.png",
+        width: 1280,
+        height: 1280,
+        alt: "Xemory Systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xemory Systems",
-    description:
-      "Thoughtful digital systems, automation, AI-related implementation, and custom technical work.",
+    images: ["/brand/xemory-canonical.png"],
   },
+  icons: { icon: "/icon.svg" },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body
-        suppressHydrationWarning
-        className={`${manrope.variable} ${cormorant.variable} relative min-h-screen overflow-x-clip bg-black font-sans antialiased text-white selection:bg-white/10`}
-      >
-        <div className="site-backdrop pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-          <div className="site-backdrop__base" />
-          <div className="site-backdrop__vignette" />
-          <div className="starfield starfield--near" />
-          <div className="starfield starfield--mid" />
-          <div className="starfield starfield--far" />
-          <div className="starfield-core" />
-        </div>
-        <div className="relative z-10">{children}</div>
+    <html lang="en">
+      <body>
+        <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
   );

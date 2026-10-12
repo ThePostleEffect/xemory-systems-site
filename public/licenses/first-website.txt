@@ -1,0 +1,25 @@
+XEMORY PRODUCTS - FIRST WEBSITE KIT LICENSE
+Version 1.0 | October 10, 2026
+
+Your purchase permits you to:
+- Read and use the guide, worksheets, and prompts personally.
+- Modify the supplied HTML, CSS, JavaScript, and original SVG artwork.
+- Publish the modified template as your own personal or business website.
+- Use the template in finished websites you create for clients.
+- Remove Xemory attribution from a published website.
+- Share source files with a client for the finished website you built for them.
+
+You may not redistribute or resell the guide, prompt collection, worksheets,
+or substantially unchanged starter as a downloadable kit or competing template
+product. Do not publicly upload the complete product ZIP.
+
+You retain ownership of your own copy, images, and modifications. Third-party
+content you add remains subject to its own license. All supplied artwork is
+original geometric SVG artwork; no third-party font or photo is bundled.
+
+The tutorial and starter are provided as-is. You are responsible for reviewing
+your website's accuracy, accessibility, permissions, and hosting configuration.
+This license does not remove any rights you have under applicable law.
+
+Independent product. OpenAI, Codex, Netlify, and other third-party product names
+remain the property of their respective owners. No affiliation is implied.

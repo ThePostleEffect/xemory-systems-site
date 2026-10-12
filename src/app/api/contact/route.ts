@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 
-import { type ContactFormValues, validateContactForm } from "@/lib/contact-form";
+import {
+  type ContactFormValues,
+  validateContactForm,
+} from "@/lib/contact-form";
 import { siteContent } from "@/lib/site-content";
 
 export const runtime = "nodejs";
@@ -14,13 +17,36 @@ type ResendError = {
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json()) as Partial<ContactFormValues>;
+    const payload = await request.json().catch(() => null);
+    const fields = [
+      "fullName",
+      "emailAddress",
+      "organization",
+      "projectType",
+      "message",
+      "companyWebsite",
+      "startedAt",
+    ];
+    if (
+      !payload ||
+      typeof payload !== "object" ||
+      Array.isArray(payload) ||
+      fields.some(
+        (key) => payload[key] !== undefined && typeof payload[key] !== "string",
+      )
+    ) {
+      return NextResponse.json(
+        { ok: false, message: "Please provide valid contact details." },
+        { status: 400 },
+      );
+    }
 
     const values: ContactFormValues = {
       fullName: payload.fullName ?? "",
       emailAddress: payload.emailAddress ?? "",
       organization: payload.organization ?? "",
-      projectType: (payload.projectType as ContactFormValues["projectType"]) ?? "Other",
+      projectType:
+        (payload.projectType as ContactFormValues["projectType"]) ?? "Other",
       message: payload.message ?? "",
       companyWebsite: payload.companyWebsite ?? "",
       startedAt: payload.startedAt ?? "",
@@ -31,14 +57,26 @@ export async function POST(request: Request) {
     }
 
     const startedAtMs = Number(values.startedAt);
-    if (Number.isFinite(startedAtMs) && Date.now() - startedAtMs < 2500) {
-      return NextResponse.json({ ok: true });
+    if (
+      startedAtMs > 0 &&
+      Number.isFinite(startedAtMs) &&
+      Date.now() - startedAtMs < 2500
+    ) {
+      return NextResponse.json(
+        { ok: false, message: "Please wait a moment, then send your message." },
+        { status: 429 },
+      );
     }
 
     const errors = validateContactForm(values);
     if (Object.keys(errors).length > 0) {
       return NextResponse.json(
-        { ok: false, errors, message: "Please review the highlighted fields and try again." },
+        {
+          ok: false,
+          errors,
+          message:
+            "Please check your name, email, category and message, then try again.",
+        },
         { status: 400 },
       );
     }
@@ -51,7 +89,8 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          message: "Contact delivery is not configured yet. Please try again or email us directly.",
+          message:
+            "Contact delivery is not configured yet. Please try again or email us directly.",
         },
         { status: 500 },
       );
@@ -102,13 +141,16 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      const errorBody = (await response.json().catch(() => null)) as ResendError | null;
+      const errorBody = (await response
+        .json()
+        .catch(() => null)) as ResendError | null;
       console.error("Resend contact form delivery failed", errorBody);
 
       return NextResponse.json(
         {
           ok: false,
-          message: "Something went wrong while sending your inquiry. Please try again or email us directly.",
+          message:
+            "Something went wrong while sending your inquiry. Please try again or email us directly.",
         },
         { status: 502 },
       );
@@ -121,7 +163,8 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        message: "Something went wrong while sending your inquiry. Please try again or email us directly.",
+        message:
+          "Something went wrong while sending your inquiry. Please try again or email us directly.",
       },
       { status: 500 },
     );

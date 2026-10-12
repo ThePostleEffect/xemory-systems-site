@@ -1,0 +1,25 @@
+XEMORY PRODUCTS | DIY ROBOT FACE PACK
+Version 1.0 | October 11, 2026
+
+You may use and modify the supplied face artwork in your own personal or
+commercial finished projects, including a robot, game, application, video,
+or demonstration. You may distribute the artwork as an integrated part of
+that finished project when necessary for it to work. Attribution is welcome
+but is not required.
+
+You may modify and integrate the preview's source in those finished projects.
+You may not redistribute or resell this pack, the guide, prompts, or artwork
+as a standalone asset library, template pack, or substantially unchanged
+competing download. You may not offer the source assets as a separate download
+or grant others rights to resell the asset collection.
+
+You retain rights in your own original additions. Third-party material you
+add remains subject to its own license. The supplied face geometry is original
+vector artwork; no third-party character, font, photo, or logo is bundled.
+
+The files are provided as-is. Specific board, driver, and display compatibility
+is your responsibility to verify. No hardware or firmware support service is
+included. These terms do not remove rights you have under applicable law.
+
+Independent Xemory Products publication. No device-maker or OpenAI affiliation,
+sponsorship, or endorsement is implied.

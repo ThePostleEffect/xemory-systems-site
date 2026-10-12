@@ -1,0 +1,22 @@
+XEMORY PRODUCTS — ANIMATED DESKTOP BUDDY KIT
+Version 1.1 | October 11, 2026
+
+Your purchase permits you to read and use the guide, prompts and worksheets
+personally; run the supplied companion on your own computers; and modify the
+included HTML, CSS, JavaScript and artwork for your own personal use.
+
+You may show screenshots or videos of your own customized buddy. You may not
+redistribute or resell the guide, prompts, concept sheet, source files, or a
+substantially unchanged kit as a downloadable product. Do not publicly upload
+the complete purchased ZIP. The kit does not grant resale or sublicensing rights.
+
+You retain rights in your own original additions. Third-party content you add
+remains subject to its own license. The two runnable characters are original SVG
+artwork; the character concept sheet was made with AI-assisted image generation.
+No third-party font or photo file is bundled with the app.
+
+The guide and starter are provided as-is. Review changes before using them.
+This license does not remove any rights you have under applicable law.
+
+Independent Xemory Products publication. OpenAI and Codex names belong to their
+respective owners. No affiliation, sponsorship or endorsement is implied.
