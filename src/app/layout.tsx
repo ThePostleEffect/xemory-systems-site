@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFrame } from "@/components/site-frame";
 import "./globals.css";
+import "./home-showcase.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.xemorysystems.com"),
   title: {

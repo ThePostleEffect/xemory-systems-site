@@ -1,0 +1,37 @@
+<svg width="720" height="680" style="overflow:visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340">
+    <ellipse data-part="shadow" data-pivot="180px 305px" cx="180" cy="305" rx="73" ry="11" fill="#344f30" opacity=".10"/>
+    <g data-part="body" data-pivot="180px 285px">
+      <g data-part="support-foot" data-pivot="149px 274px"><path d="M137 265l-8 26q-4 11 10 11h19q11-1 7-11l-4-26" fill="#7d9f71"/></g>
+      <g data-part="greeting-foot" data-pivot="211px 274px"><path d="M223 265l8 26q4 11-10 11h-19q-11-1-7-11l4-26" fill="#7d9f71"/></g>
+      <g data-part="support" data-pivot="127px 231px">
+        <path d="M126 222q-35-2-58 22l13 17q27-22 51-20" fill="#b9d1ad" stroke="#7d9f71" stroke-width="2.5"/>
+        <ellipse cx="69" cy="253" rx="14" ry="17" transform="rotate(32 69 253)" fill="#7d9f71"/>
+        <path d="M64 248l7-3" stroke="#f8faec" opacity=".5" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <g data-part="greeting" data-pivot="233px 231px">
+        <path d="M234 222q35-2 58 22l-13 17q-27-22-51-20" fill="#b9d1ad" stroke="#7d9f71" stroke-width="2.5"/>
+        <ellipse cx="291" cy="253" rx="14" ry="17" transform="rotate(-32 291 253)" fill="#7d9f71"/>
+        <path d="M289 245l7 3" stroke="#f8faec" opacity=".5" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <rect x="122" y="212" width="116" height="73" rx="32" fill="#b9d1ad" stroke="#7d9f71" stroke-width="2.5"/>
+      <path d="M178 257c-8-10-18 2 0 12 18-10 8-22 0-12" fill="#eff1d9"/>
+      <g data-part="head" data-pivot="180px 218px">
+        <path d="M180 81V53" stroke="#7d9f71" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="180" cy="43" r="12" fill="#eac47e" stroke="#ceaa65" stroke-width="2"/><circle cx="176" cy="39" r="4" fill="#fff2c9"/>
+        <rect x="81" y="132" width="25" height="47" rx="12" fill="#7d9f71"/><rect x="254" y="132" width="25" height="47" rx="12" fill="#7d9f71"/>
+        <rect x="92" y="79" width="176" height="146" rx="51" fill="#b9d1ad" stroke="#7d9f71" stroke-width="2.5"/>
+        <path d="M110 123q7-25 36-27" fill="none" stroke="#fff" stroke-width="6" opacity=".5" stroke-linecap="round"/>
+        <rect x="110" y="119" width="140" height="91" rx="33" fill="#f9f8e9" stroke="#7d9f71" stroke-width="2"/>
+        <g data-part="face" data-pivot="180px 163px">
+          <g data-part="eyes" data-pivot="180px 158px" data-expression="content curious" fill="#263e34"><rect x="140" y="145" width="14" height="27" rx="7"/><rect data-part="curious-eye" x="206" y="145" width="14" height="27" rx="7"/></g>
+          <g data-expression="cheer" style="display:none" fill="none" stroke="#263e34" stroke-width="5" stroke-linecap="round"><path d="M137 160q10-17 20 0M203 160q10-17 20 0"/></g>
+          <g data-expression="sleepy" style="display:none" fill="none" stroke="#263e34" stroke-width="5" stroke-linecap="round"><path d="M139 161q8 7 17 0m48 0q8 7 17 0"/></g>
+          <path d="M171 180q9 9 18 0" fill="none" stroke="#263e34" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="132" cy="178" r="7" fill="#e9a58a" opacity=".65"/><circle cx="228" cy="178" r="7" fill="#e9a58a" opacity=".65"/>
+        </g>
+      </g>
+      <path d="M120 221q59 26 120 0l-2 16q-57 24-116 0z" fill="#cf735b"/>
+      <g data-part="accessory" data-pivot="219px 237px"><path d="M211 234l-3 39 17 2 5-43z" fill="#cf735b"/><path d="M211 266l12 2" stroke="#eeb39b" stroke-width="2"/></g>
+    </g>
+    <g data-part="affection" data-pivot="180px 130px" fill="#d47c65" opacity="0" aria-hidden="true"><path d="M287 104c-16-21-37 4 0 24 37-20 16-45 0-24M64 92c-11-15-26 3 0 17 26-14 11-32 0-17"/><path d="M305 184l3 7 8 3-8 3-3 7-3-7-8-3 8-3z" fill="#dbb56e"/></g>
+  </svg>

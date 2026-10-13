@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Entrance } from "@/components/entrance";
-import { BrandSymbol } from "@/components/brand-symbol";
+import { HomeShowcase } from "@/components/home-showcase";
+import Image from "next/image";
 import { LabCard } from "@/components/lab-card";
 import { labItems } from "@/lib/lab";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
@@ -10,40 +11,11 @@ export default function Home() {
     <>
       <Entrance />
       <main id="main-content" tabIndex={-1}>
-        <section className="home-hero">
-          <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="tiny-core" /> INDEPENDENT IDEAS. REAL CREATIONS.
-            </p>
-            <h1>
-              WE BUILD
-              <br />
-              WHAT WE
-              <br />
-              <span>WISH EXISTED.</span>
-            </h1>
-            <p className="hero-description">
-              Useful, experimental technology.
-              <br />
-              Built to put more capability in your hands.
-            </p>
-            <Link className="action" href="/lab">
-              EXPLORE THE LAB <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-          <div className="hero-art">
-            <BrandSymbol />
-            <div className="object-caption">
-              <span>XS / THE CORE</span>
-              <span>EVERYTHING STARTS WITH AN IDEA.</span>
-            </div>
-          </div>
-          <div className="hero-bottom">
-            <span>SOFTWARE / TOOLS / EXPERIMENTS</span>
-            <a href="#creations">
-              SCROLL TO DISCOVER <span aria-hidden="true">↓</span>
-            </a>
-          </div>
+        <HomeShowcase />
+        <section className="homepage-teaser">
+          <Image src="/home/website-preview.png" alt="A preview of the Lumen website starter" width={1280} height={720} sizes="(max-width: 800px) 92vw, 25vw" />
+          <div><p className="eyebrow">XEMORY PRODUCTS</p><h2>Build Your First Website with Codex</h2><p>A beginner guide with a starter you can make your own.</p><Link className="text-link" href="/lab#creation-xkBrt">Explore the guide</Link></div>
+          <p className="teaser-note">GUIDES.<br />EDITABLE STARTERS.<br />REAL CREATIONS.</p>
         </section>
         <section className="philosophy-strip">
           <p>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { BrandSymbol } from "./brand-symbol";
 const links = [
   ["/", "Home"],
   ["/lab", "The Lab"],
@@ -40,7 +41,7 @@ export function CoreNavigation() {
         aria-controls="core-menu"
         onClick={() => setOpen(!open)}
       >
-        <span className="core-object" />
+        <BrandSymbol />
         <span className="core-hint" aria-hidden="true">
           {open ? "−" : "+"}
         </span>

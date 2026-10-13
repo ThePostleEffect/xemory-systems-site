@@ -26,10 +26,12 @@ export function Entrance() {
     if (!show) return;
     const content = document.getElementById("site-content");
     if (content) content.inert = true;
+    document.dispatchEvent(new CustomEvent("xemory:entrance", { detail: { open: true } }));
     document.body.style.overflow = "hidden";
     enterRef.current?.focus();
     return () => {
       if (content) content.inert = false;
+      document.dispatchEvent(new CustomEvent("xemory:entrance", { detail: { open: false } }));
       document.body.style.overflow = "";
     };
   }, [show]);
