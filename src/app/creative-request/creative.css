@@ -127,3 +127,7 @@
 /* Keep the supplied logo intact, without cropping or overlapping decoration. */
 .creative-orbit { display:none; }
 
+
+@media(max-width:1000px) { .creative-brand-scene { transform:none; } }
+@media(max-width:700px) { .creative-brand-scene { min-height:330px; margin:0; } .creative-logo-window { width:min(100%,320px); } }
+
