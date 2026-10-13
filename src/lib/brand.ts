@@ -1,2 +1,2 @@
-// Swap paths when canonical variants or the vault film are supplied.
-export const brand = { logo: "/brand/xemory-canonical.png", entranceVideo: "" };
+// Canonical artwork remains the source for static and non-WebGL brand treatments.
+export const brand = { logo: "/brand/xemory-canonical.png" };

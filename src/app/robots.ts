@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/"],
+      disallow: ["/api/", "/creative-admin"],
     },
     sitemap: "https://www.xemorysystems.com/sitemap.xml",
   };

@@ -1,15 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Entrance } from "@/components/entrance";
 import { HomeShowcase } from "@/components/home-showcase";
 import Image from "next/image";
 import { LabCard } from "@/components/lab-card";
 import { labItems } from "@/lib/lab";
+import "./creative-request/creative.css";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
-      <Entrance />
       <main id="main-content" tabIndex={-1}>
         <HomeShowcase />
         <section className="homepage-teaser">
@@ -17,6 +16,7 @@ export default function Home() {
           <div><p className="eyebrow">XEMORY PRODUCTS</p><h2>Build Your First Website with Codex</h2><p>A beginner guide with a starter you can make your own.</p><Link className="text-link" href="/lab#creation-xkBrt">Explore the guide</Link></div>
           <p className="teaser-note">GUIDES.<br />EDITABLE STARTERS.<br />REAL CREATIONS.</p>
         </section>
+        <section className="creative-home-callout section-wrap"><div><p className="eyebrow">CUSTOM CREATIVE WORK · FROM $35 USD</p><h2>Your vision. Built your way.</h2><p>Images, short videos, graphics, presentations and more. Choose only what you need.</p></div><Link className="action" href="/creative-request">CREATE WITH US ↗</Link></section>
         <section className="philosophy-strip">
           <p>
             IMAGINE IT.

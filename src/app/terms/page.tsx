@@ -89,6 +89,15 @@ const sections: LegalSection[] = [
     ),
   },
   {
+    id: "creative-requests",
+    title: "Custom creative requests",
+    content: <p>Custom creative requests are separate from ready-made digital downloads.
+      Submitting a brief does not make a purchase or start production. We discuss
+      the achievable deliverables, output specifications, timing and purchase
+      details with you before production and payment. A selected tier is a
+      one-time price for the scope we agree, not a subscription or unlimited work.</p>,
+  },
+  {
     id: "refunds",
     title: "14-day money-back guarantee",
     content: (

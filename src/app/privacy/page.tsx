@@ -47,6 +47,16 @@ const sections: LegalSection[] = [
             submits a start time and a hidden anti-spam field.
           </li>
           <li>
+            <strong>Creative requests:</strong> we receive your selected tier,
+            requested services, creative brief, name, email, optional project
+            details, target date, links and any reference images you attach.
+            References are stored privately on our hosting server as processed
+            image copies, with metadata removed. We use this information to
+            evaluate your request, agree the scope, communicate with you and
+            produce the requested work. The form also sends a random request
+            key to prevent duplicate submissions and an anti-spam field.
+          </li>
+          <li>
             <strong>Purchases:</strong> Payhip makes order information available
             to us, such as the buyer’s name and email address, purchased item,
             amount, payment status and relevant billing, tax or download

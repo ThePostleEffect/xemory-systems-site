@@ -6,6 +6,7 @@ import { BrandSymbol } from "./brand-symbol";
 const links = [
   ["/", "Home"],
   ["/lab", "The Lab"],
+  ["/creative-request", "Create with us"],
   ["/about", "About"],
   ["/contact", "Contact"],
 ];

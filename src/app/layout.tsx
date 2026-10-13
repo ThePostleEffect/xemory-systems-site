@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteFrame } from "@/components/site-frame";
 import "./globals.css";
 import "./home-showcase.css";
+import "./vault.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.xemorysystems.com"),
   title: {
@@ -37,7 +38,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: `html[data-xemory-entrance="pending"],html[data-xemory-entrance="closed"],html[data-xemory-entrance="opening"]{overflow:hidden}html[data-xemory-entrance="pending"] #site-content,html[data-xemory-entrance="closed"] #site-content{visibility:hidden;opacity:0}html[data-xemory-entrance="skip"] .vault-entrance,html[data-xemory-entrance="expired"] .vault-entrance{display:none}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(()=>{let seen=false;try{seen=sessionStorage.getItem('xemory-entered')==='1'}catch(e){}const needsEntrance=location.pathname==='/'&&(new URLSearchParams(location.search).get('entrance')==='preview'||(!seen&&!location.hash));document.documentElement.dataset.xemoryEntrance=needsEntrance?'pending':'skip';if(needsEntrance)setTimeout(()=>{if(document.documentElement.dataset.xemoryEntrance==='pending')document.documentElement.dataset.xemoryEntrance='expired'},5000)})()` }} />
+        <noscript><style>{`#site-content{visibility:visible!important}.vault-entrance{display:none!important}`}</style></noscript>
+      </head>
       <body>
         <SiteFrame>{children}</SiteFrame>
       </body>

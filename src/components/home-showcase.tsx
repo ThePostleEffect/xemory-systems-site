@@ -22,9 +22,8 @@ export function HomeShowcase() {
     const visibility = () => setHidden(document.hidden);
     const entrance = (event: Event) => setReady(!(event as CustomEvent<{ open: boolean }>).detail.open);
     motion(); visibility();
-    let entered = Boolean(location.hash);
-    try { entered ||= sessionStorage.getItem("xemory-entered") === "1"; } catch {}
-    setReady(entered);
+    const entranceState = document.documentElement.dataset.xemoryEntrance;
+    setReady(entranceState !== "pending" && entranceState !== "closed");
     media.addEventListener("change", motion);
     document.addEventListener("visibilitychange", visibility);
     document.addEventListener("xemory:entrance", entrance);

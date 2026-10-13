@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CoreNavigation } from "./core-navigation";
+import { Entrance } from "./entrance";
 export function SiteFrame({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -12,7 +13,7 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
           <Link className="wordmark" href="/" aria-label="Xemory Systems home">
             XEMORY<span>SYSTEMS</span>
           </Link>
-          <nav className="header-links" aria-label="Explore Xemory"><Link href="/lab">The Lab</Link><Link href="/what-we-do">What we do</Link><Link href="/about">About</Link></nav>
+          <nav className="header-links" aria-label="Explore Xemory"><Link href="/lab">The Lab</Link><Link href="/creative-request">Create with us</Link><Link href="/about">About</Link></nav>
           <span className="header-coordinate">
             BELLINGHAM, WA <span className="tiny-core" />
           </span>
@@ -30,7 +31,7 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
           </div>
         </footer>
       </div>
-      <div id="entrance-root" />
+      <Entrance />
     </>
   );
 }

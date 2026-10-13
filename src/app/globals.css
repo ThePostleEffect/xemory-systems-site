@@ -342,96 +342,6 @@ button {
   margin-left: 20px;
   color: var(--amber);
 }
-.entrance {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 300;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition:
-    opacity 0.65s var(--ease),
-    transform 0.65s var(--ease);
-}
-.entrance-object {
-  position: relative;
-  width: clamp(190px, 25vw, 310px);
-  animation: core-float 7s ease-in-out infinite;
-}
-.entrance-light {
-  position: absolute;
-  top: 47%;
-  left: 48%;
-  height: 5%;
-  width: 4%;
-  background: #ff9a20;
-  filter: blur(15px);
-  box-shadow: 0 0 45px #ff990030;
-  pointer-events: none;
-}
-.enter-action {
-  background: transparent;
-  border-bottom: 1px solid #805022;
-  padding: 22px 0 12px;
-  margin-top: 38px;
-  font:
-    11px Consolas,
-    monospace;
-  letter-spacing: 4px;
-  color: #e1e5e9;
-}
-.enter-action span {
-  color: var(--amber);
-  margin-left: 22px;
-  font-size: 20px;
-}
-.enter-action:hover {
-  color: var(--amber);
-  border-color: var(--amber);
-}
-.entrance-caption {
-  font:
-    8px Consolas,
-    monospace;
-  color: #64707e;
-  letter-spacing: 2px;
-  margin-top: 22px;
-}
-.entrance-corner {
-  position: absolute;
-  bottom: 30px;
-  left: var(--space);
-  font:
-    8px Consolas,
-    monospace;
-  letter-spacing: 2px;
-  color: #48515c;
-}
-.entrance.is-leaving:not(.is-playing) {
-  opacity: 0;
-  transform: scale(1.03);
-  pointer-events: none;
-}
-.entrance-film {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  pointer-events: none;
-}
-.is-playing .entrance-film {
-  opacity: 1;
-}
-@keyframes core-float {
-  50% {
-    transform: translateY(-4px);
-  }
-}
 .philosophy-strip {
   border-block: 1px solid var(--line);
   background: var(--navy);
@@ -1173,12 +1083,6 @@ button {
     flex-wrap: wrap;
     gap: 20px;
     font-size: 9px;
-  }
-  .entrance-caption {
-    font-size: 7px;
-  }
-  .entrance-corner {
-    font-size: 6px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

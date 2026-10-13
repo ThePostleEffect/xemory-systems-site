@@ -1,0 +1,76 @@
+/* The door geometry carries the transition. The actual homepage remains underneath. */
+html { scrollbar-gutter: stable; }
+html[data-xemory-entrance="pending"] #site-content { visibility: hidden; opacity: 0; }
+html[data-xemory-entrance="closed"] #site-content { visibility: hidden; transform: scale(.972); opacity: 0; }
+html[data-xemory-entrance="opening"] #site-content { visibility: visible; transform: none; opacity: 1; transition: transform 2.3s .9s cubic-bezier(.2,.65,.2,1), opacity 1.3s 1s ease; }
+.vault-entrance { position: fixed; inset: 0; z-index: 300; isolation: isolate; color: #d4dae1; overflow: hidden; }
+.vault-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity .65s ease; }
+.vault-canvas canvas { display: block; width: 100%; height: 100%; }
+.is-3d .vault-canvas { opacity: 1; }
+.vault-fallback { position: absolute; inset: 0; visibility: visible; }
+/* Never crossfade two transparent covers: the poster stays opaque beneath the canvas. */
+.is-3d .vault-fallback { visibility: hidden; transition: visibility 0s .75s; pointer-events: none; }
+.vault-fallback-left, .vault-fallback-right { position: absolute; top: 0; bottom: 0; width: 50.1%; background: radial-gradient(ellipse at 100% 50%, #1b222b, #070a0e 60%, #020305); transition: transform 1.55s .15s cubic-bezier(.7,0,.2,1); }
+.vault-fallback-left { left: 0; border-right: 1px solid #a96e2940; }
+.vault-fallback-right { right: 0; background: radial-gradient(ellipse at 0 50%, #1b222b, #070a0e 60%, #020305); }
+.vault-poster { position: absolute; top: 44.5%; left: 50%; width: min(67vh, 93vw); transform: translate(-50%,-50%); transition: opacity .4s, transform 1.2s; }
+.is-opening:not(.is-3d) .vault-fallback-left { transform: translateX(-101%); }
+.is-opening:not(.is-3d) .vault-fallback-right { transform: translateX(101%); }
+.is-opening .vault-poster { opacity: 0; transform: translate(-50%,-50%) scale(.8); }
+.vault-atmosphere { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 48%, transparent 26%, #00000066 75%, #0009); transition: opacity 1.3s 1s; }
+.is-opening .vault-atmosphere { opacity: 0; }
+.vault-masthead { position: absolute; top: 5.8%; left: 5%; right: 5%; display: flex; align-items: center; justify-content: space-between; gap: 24px; text-align: center; transition: opacity .5s, transform .7s; }
+.vault-masthead h1 { margin: 0; font: 600 clamp(20px, 2.4vw, 32px)/1.05 Arial, sans-serif; letter-spacing: .38em; padding-left: .38em; color: #dde4ec; }
+.vault-masthead h1 span { display: block; font-size: 8px; letter-spacing: .73em; margin-top: 12px; color: #788b9d; }
+.vault-kicker, .vault-location, .vault-footer, .vault-subline { font: 9px/1.8 Consolas, monospace; letter-spacing: .16em; }
+.vault-kicker, .vault-location { width: 240px; color: #82909d; }
+.vault-kicker { text-align: left; }
+.vault-location { text-align: right; }
+.vault-invitation { position: absolute; left: 20px; right: 20px; bottom: 9.7%; text-align: center; transition: opacity .4s, transform .65s; }
+.vault-invitation p { margin: 0 0 15px; font: 400 clamp(20px, 2.1vw, 28px)/1.2 Arial, sans-serif; letter-spacing: -.025em; color: #d8dee6; }
+.vault-enter { --gel: 354; position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 260px; height: 59px; padding: 0 24px; border: 1px solid hsl(var(--gel) 100% 77% / .95); border-radius: 999px; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 50% 112%, hsl(var(--gel) 100% 70% / .8), transparent 62%), linear-gradient(180deg, hsl(var(--gel) 94% 64%) 0%, hsl(var(--gel) 96% 43%) 47%, hsl(var(--gel) 98% 20%) 100%); color: #fff5f5; font: 600 11px/1.3 Arial, sans-serif; letter-spacing: .18em; text-shadow: 0 1px 5px #30000ac9; box-shadow: inset 0 2px 2px #ffffff80, inset 0 -4px 8px #19000490, 0 0 0 4px #080d12, 0 0 0 5px #39434e, 0 5px 7px #000b, 0 0 18px hsl(var(--gel) 100% 55% / .5), 0 0 49px hsl(var(--gel) 100% 50% / .28); cursor: pointer; transition: box-shadow .25s, transform .18s; }
+.vault-enter::before { content: ""; position: absolute; inset: 3px 9px auto; height: 45%; border-radius: 100px 100px 58px 58px; background: linear-gradient(180deg, #fff9, #fff1 82%, transparent); pointer-events: none; }
+.vault-enter::after { content: ""; position: absolute; inset: 5px; border-radius: inherit; border: 1px solid #ffffff20; border-bottom-color: #ffffff55; pointer-events: none; }
+.vault-button-label, .vault-button-icon, .vault-button-light { position: relative; z-index: 1; }
+.vault-button-label { min-width: 143px; }
+.vault-button-icon { width: 16px; font-size: 19px; line-height: 1; }
+.vault-button-light { width: 6px; height: 6px; border-radius: 50%; background: #fff; box-shadow: 0 0 7px #fff, 0 0 11px hsl(var(--gel) 100% 85%); }
+.vault-enter:hover:not(:disabled) { transform: translateY(-1px); box-shadow: inset 0 2px 2px #ffffff9c, inset 0 -4px 8px #19000490, 0 0 0 4px #080d12, 0 0 0 5px #687382, 0 6px 9px #000b, 0 0 23px hsl(var(--gel) 100% 55% / .65), 0 0 59px hsl(var(--gel) 100% 50% / .38); }
+.vault-enter:active { transform: translateY(2px); }
+.is-armed .vault-enter { --gel: 145; color: #effff7; text-shadow: 0 1px 5px #001c10c9; cursor: default; transform: translateY(1px); }
+.vault-subline { display: block; margin-top: 10px; color: #667b8e; font-size: 8px; }
+.vault-footer { position: absolute; bottom: 4%; left: 5%; right: 5%; display: flex; justify-content: space-between; color: #5e7386; transition: opacity .4s; }
+.vault-skip { position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); padding: 8px 12px; border: 0; color: #a7b0b9; background: #0507098a; font: 10px/1.5 Arial, sans-serif; cursor: pointer; }
+.vault-skip span { margin-left: 6px; }
+.vault-enter:focus-visible { outline: 2px solid #ffd2d7; outline-offset: 9px; }
+.vault-skip:focus-visible, .vault-replay:focus-visible { outline: 2px solid #ffb64e; outline-offset: 5px; }
+.is-opening .vault-masthead { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+.is-opening .vault-invitation { opacity: 0; transform: translateY(8px); pointer-events: none; }
+.is-opening .vault-footer { opacity: 0; }
+.vault-replay { position: fixed; right: 20px; bottom: 20px; z-index: 290; color: #ffc16d; border: 1px solid #7a5327; background: #10151cef; padding: 12px 17px; font: 12px Arial, sans-serif; cursor: pointer; }
+.vault-entrance.is-reduced { transition: opacity .18s; }
+.vault-entrance.is-reduced.is-opening { opacity: 0; }
+.is-reduced .vault-fallback-left, .is-reduced .vault-fallback-right { transition: none; transform: none !important; }
+@media (max-width: 640px) {
+  .vault-masthead { top: 7%; justify-content: center; }
+  .vault-masthead h1 { font-size: 26px; }
+  .vault-kicker, .vault-location { display: none; }
+  .vault-invitation { bottom: 13%; }
+  .vault-invitation p { font-size: 23px; }
+  .vault-enter { min-width: 255px; }
+  .vault-footer { bottom: 7%; justify-content: center; font-size: 8px; }
+  .vault-footer span:last-child { display: none; }
+  .vault-skip { bottom: 2.5%; }
+}
+@media (max-height: 520px) and (min-width: 641px) {
+  .vault-masthead { top: 6%; }
+  .vault-invitation { bottom: 7%; }
+  .vault-invitation p, .vault-subline { display: none; }
+  .vault-enter { height: 45px; padding: 0 20px; }
+  .vault-footer { display: none; }
+  .vault-skip { left: auto; right: 20px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-xemory-entrance] #site-content { transform: none; transition: none; }
+  .vault-entrance *, .vault-entrance *::before { animation: none !important; }
+}
