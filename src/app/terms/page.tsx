@@ -94,8 +94,8 @@ const sections: LegalSection[] = [
     content: <p>Custom creative requests are separate from ready-made digital downloads.
       Submitting a brief does not make a purchase or start production. We discuss
       the achievable deliverables, output specifications, timing and purchase
-      details with you before production and payment. A selected tier is a
-      one-time price for the scope we agree, not a subscription or unlimited work.</p>,
+      details with you before production and payment. A selected starting budget is not a final quote. We agree the scope, total price,
+        revisions and delivery date before payment. This is not a subscription or unlimited work.</p>,
   },
   {
     id: "refunds",

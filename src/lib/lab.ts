@@ -101,6 +101,13 @@ export const labItems: LabItem[] = [
       "Illustrated shopping + assembly guide · Printable patterns · Programming instructions",
     note: "Prototype edition: physical validation pending. Concept image. Instructions only; hardware, tools and computer not included. Parts costs vary by location, supplier, tax and shipping.",
   },
+  {
+    id: "BtMCN", number: "07", title: "36-Prompt Bundle",
+    category: "Creative assets", status: "Available", price: 1.99, image: "prompts",
+    description: "Create, learn and tell better stories with Visual Brief Studio, Learn It Deeply and Storyworld Builder.",
+    includes: "Three packs · 36 main prompts + 36 repair follow-ups · Three PDF guides (57 pages) · Copyable text · Three worked examples + project cards · One ZIP",
+    note: "Digital prompt collection. AI accounts, software, usage credits and custom services are not included. Tool capabilities and provider costs vary; review results. Personal and business-project use; no resale of the collection.",
+  },
 ];
 export const checkout = (id: string) =>
   `https://payhip.com/buy?link=${encodeURIComponent(id)}`;

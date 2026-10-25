@@ -131,3 +131,8 @@
 @media(max-width:1000px) { .creative-brand-scene { transform:none; } }
 @media(max-width:700px) { .creative-brand-scene { min-height:330px; margin:0; } .creative-logo-window { width:min(100%,320px); } }
 
+
+.service-package { margin-top:32px; }
+.service-package h3 { font-size:24px; line-height:1.25; }
+.service-package p { margin-block:14px; line-height:1.65; }
+.service-package .eyebrow { margin-top:0; }

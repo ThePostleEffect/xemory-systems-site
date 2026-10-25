@@ -1,7 +1,7 @@
 export const creativeTiers = [
-  { id: "essentials", name: "Essentials", price: 35, line: "A strong starting point.", description: "A complete, usable set of creative work, tailored to your brief through a streamlined workflow." },
-  { id: "enhanced", name: "Enhanced", price: 65, line: "Closer to your vision.", description: "More tailored detail and closer reference and brand matching, with extra care in the finishing." },
-  { id: "above-beyond", name: "Above & Beyond", price: 98, line: "The most refined finish.", description: "Our highest level of detail, consistency and finishing, with higher-resolution output where the work permits." },
+  { id: "essentials", name: "Essentials", price: 35, line: "A strong starting point.", description: "The $35 starter covers one static graphic, supplied copy and brand details, one size, JPG/PNG files and one consolidated revision." },
+  { id: "enhanced", name: "Enhanced", price: 65, line: "Closer to your vision.", description: "A $65 starting budget. The Product Listing Makeover covers three graphics for one product, one size each and one consolidated revision." },
+  { id: "above-beyond", name: "Above & Beyond", price: 98, line: "The most refined finish.", description: "A $98 starting budget for a more involved brief. Deliverables, formats, revisions, total price and delivery date are quoted individually." },
 ] as const;
 export const creativeServices = [
   { id: "images", name: "AI images", title: "Worlds, characters, possibilities.", description: "Illustrations, concept art, lifestyle scenes, website imagery and backgrounds. A themed images-only request is welcome.", icon: "image" },
@@ -25,7 +25,7 @@ export function validateBrief(value: unknown): { brief?: CreativeBrief; errors: 
     return s;
   };
   const brief: CreativeBrief = { tier: text("tier", 30), categories: [], idea: text("idea", 6000, 20), name: text("name", 150, 2), email: text("email", 254, 3).toLowerCase(), brand: text("brand", 150), usage: text("usage", 500), links: text("links", 2000), targetDate: text("targetDate", 10), consent: data.consent === true };
-  if (!creativeTiers.some(t => t.id === brief.tier)) errors.tier = "Choose one tier.";
+  if (!creativeTiers.some(t => t.id === brief.tier)) errors.tier = "Choose a starting budget.";
   if (!Array.isArray(data.categories) || !data.categories.length || data.categories.length > categoryOptions.length || data.categories.some(c => typeof c !== "string" || !categoryOptions.some(o => o.id === c))) errors.categories = "Choose one service or a custom mix.";
   else brief.categories = [...new Set(data.categories as string[])];
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(brief.email)) errors.email = "Enter an email address we can reply to.";
